@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Chongqing Design Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-sky-500/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-sky-400/60 shadow-lg shadow-sky-500/20 bg-slate-900 flex items-center justify-center">
+                    <img src="images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-tech font-extrabold text-xl tracking-wider bg-gradient-to-r from-sky-400 via-blue-200 to-red-400 bg-clip-text text-transparent">CHONGQING</h1>
+                    <p class="text-xs font-semibold text-sky-400 tracking-widest uppercase">Design Studio</p>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all text-sky-400 bg-sky-500/15 border border-sky-500/30">Beranda</a>
+                <a href="services.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Layanan</a>
+                <a href="portfolio.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Portofolio</a>
+                <a href="about.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Tentang Kami</a>
+                <a href="contact.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Kontak</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-3">
+                <a href="https://wa.me/6283189483134?text=Halo%20Chongqing%20Design,%20saya%20tertarik%20dengan%20jasa%20desain%20Anda." target="_blank" class="flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-emerald-600/30 transition-all transform hover:scale-105">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp Kami</span>
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-200 focus:outline-none p-2 rounded-lg bg-slate-800/50">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-700/60 flex flex-col space-y-2">
+            <a href="index.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Beranda</a>
+            <a href="services.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Layanan</a>
+            <a href="portfolio.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Portofolio</a>
+            <a href="about.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Tentang Kami</a>
+            <a href="contact.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Kontak</a>
+        </div>
+    </header>
+
+    <main class="flex-grow skyline-bg relative py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                        <span>Chongqing & Shanghai Skyline Aesthetic</span>
+                    </div>
+                    <h1 class="font-tech text-4xl sm:text-6xl font-black tracking-tight leading-none">
+                        Wujudkan Visi Megah <span class="bg-gradient-to-r from-sky-400 via-teal-300 to-red-400 bg-clip-text text-transparent">Desain Masa Depan</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed">
+                        Studio desain profesional terkemuka yang memadukan estetika megah kota metropolitan Chongqing dan Shanghai dengan presisi arsitektur modern tingkat tinggi.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="portfolio.html" class="flex items-center space-x-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-sky-500/40 transition-all transform hover:scale-105">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                            <span>Jelajahi Portofolio</span>
+                        </a>
+                        <a href="contact.html" class="flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-xl border border-slate-600 transition-all transform hover:scale-105">
+                            <i data-lucide="phone-call" class="w-5 h-5 text-sky-400"></i>
+                            <span>Hubungi Kami</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-panel rounded-2xl p-6 space-y-6 border border-sky-500/30">
+                        <div class="relative h-72 rounded-xl overflow-hidden bg-slate-950 flex items-center justify-center p-4">
+                            <img src="images/logo.png" alt="Chongqing Group Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="glass-panel border-t border-sky-500/20 py-8 px-6 text-center text-xs text-slate-400 space-y-2 mt-auto">
+        <div class="flex items-center justify-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <p class="font-tech text-slate-300 font-bold tracking-wider">CHONGQING DESIGN STUDIO</p>
+        </div>
+        <p>&copy; 2026 Chongqing Group. Seluruh Hak Cipta Dilindungi. Desain Megapolitan Chongqing & Shanghai.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
