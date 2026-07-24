@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Chongqing Design Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-sky-500/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-sky-400/60 shadow-lg shadow-sky-500/20 bg-slate-900 flex items-center justify-center">
+                    <img src="images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-tech font-extrabold text-xl tracking-wider bg-gradient-to-r from-sky-400 via-blue-200 to-red-400 bg-clip-text text-transparent">CHONGQING</h1>
+                    <p class="text-xs font-semibold text-sky-400 tracking-widest uppercase">Design Studio</p>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Beranda</a>
+                <a href="services.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Layanan</a>
+                <a href="portfolio.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all text-sky-400 bg-sky-500/15 border border-sky-500/30">Portofolio</a>
+                <a href="about.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Tentang Kami</a>
+                <a href="contact.html" class="px-4 py-2 rounded-lg font-medium text-sm transition-all ">Kontak</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-3">
+                <a href="https://wa.me/6283189483134?text=Halo%20Chongqing%20Design,%20saya%20tertarik%20dengan%20jasa%20desain%20Anda." target="_blank" class="flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg shadow-emerald-600/30 transition-all transform hover:scale-105">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp Kami</span>
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-200 focus:outline-none p-2 rounded-lg bg-slate-800/50">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-700/60 flex flex-col space-y-2">
+            <a href="index.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Beranda</a>
+            <a href="services.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Layanan</a>
+            <a href="portfolio.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Portofolio</a>
+            <a href="about.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Tentang Kami</a>
+            <a href="contact.html" class="px-4 py-2 rounded-lg font-medium text-sm text-slate-300">Kontak</a>
+        </div>
+    </header>
+
+    <main class="flex-grow skyline-bg relative py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h2 class="font-tech text-3xl font-extrabold tracking-tight">Galeri & Contoh Desain</h2>
+                    <p class="text-slate-400 text-sm mt-1">Koleksi karya desain arsitektur dan branding.</p>
+                </div>
+                <button onclick="openUploadModal()" class="flex items-center space-x-2 bg-gradient-to-r from-sky-500 to-teal-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg transition-all transform hover:scale-105">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                    <span>Simpan Foto Desain Baru</span>
+                </button>
+            </div>
+            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </main>
+
+    <div id="upload-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
+        <div class="glass-panel w-full max-w-lg rounded-2xl p-6 space-y-6 border border-sky-500/40 relative">
+            <div class="flex items-center justify-between">
+                <h3 class="font-tech text-xl font-bold text-sky-400">Simpan Foto Desain Baru</h3>
+                <button onclick="closeUploadModal()" class="text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <form id="portfolio-form" onsubmit="saveNewPortfolioItem(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Judul Desain</label>
+                    <input type="text" id="item-title" required placeholder="Contoh: Shanghai Tower Concept" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">URL / Upload Gambar</label>
+                    <input type="text" id="item-image" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Deskripsi Singkat</label>
+                    <textarea id="item-desc" rows="3" required placeholder="Deskripsi..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white"></textarea>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="closeUploadModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 text-sm font-semibold">Batal</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-sky-500 text-slate-950 font-bold text-sm">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const defaultPortfolio = [
+            { id: 1, title: "Chongqing Financial Tower Day Concept", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000&auto=format&fit=crop", desc: "Visualisasi pencakar langit." },
+            { id: 2, title: "Shanghai Skyline Corporate Branding", image: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1000&auto=format&fit=crop", desc: "Identitas visual korporat." },
+            { id: 3, title: "Chongqing Design Studio Logo", image: "images/logo.png", desc: "Emblem logo resmi." }
+        ];
+        function getItems() {
+            const saved = localStorage.getItem('cq_portfolio');
+            return saved ? JSON.parse(saved) : defaultPortfolio;
+        }
+        function renderGrid() {
+            const grid = document.getElementById('portfolio-grid');
+            const items = getItems();
+            grid.innerHTML = items.map(i => `
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-52 bg-slate-900 overflow-hidden"><img src="${i.image}" class="w-full h-full object-cover"></div>
+                    <div class="p-5 space-y-2"><h3 class="font-tech font-bold text-lg">${i.title}</h3><p class="text-slate-300 text-xs">${i.desc}</p></div>
+                </div>
+            `).join('');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+        function openUploadModal() { document.getElementById('upload-modal').classList.remove('hidden'); document.getElementById('upload-modal').classList.add('flex'); }
+        function closeUploadModal() { document.getElementById('upload-modal').classList.add('hidden'); document.getElementById('upload-modal').classList.remove('flex'); }
+        function saveNewPortfolioItem(e) {
+            e.preventDefault();
+            const title = document.getElementById('item-title').value;
+            const image = document.getElementById('item-image').value;
+            const desc = document.getElementById('item-desc').value;
+            const items = getItems();
+            items.unshift({ id: Date.now(), title, image, desc });
+            localStorage.setItem('cq_portfolio', JSON.stringify(items));
+            renderGrid();
+            closeUploadModal();
+        }
+        document.addEventListener('DOMContentLoaded', renderGrid);
+    </script>
+
+    <footer class="glass-panel border-t border-sky-500/20 py-8 px-6 text-center text-xs text-slate-400 space-y-2 mt-auto">
+        <div class="flex items-center justify-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <p class="font-tech text-slate-300 font-bold tracking-wider">CHONGQING DESIGN STUDIO</p>
+        </div>
+        <p>&copy; 2026 Chongqing Group. Seluruh Hak Cipta Dilindungi. Desain Megapolitan Chongqing & Shanghai.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
