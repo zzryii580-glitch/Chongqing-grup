@@ -95,3 +95,30 @@ body {
     background: #38bdf8;
     border-radius: 4px;
 }
+
+.header-chongqing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #0b0f19;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.logo-chongqing {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #ffffff; /* Latar belakang putih tipis agar logo terlihat kontras */
+    padding: 4px;
+}
+
+.header-chongqing h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #00ffff;
+   }
